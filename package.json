@@ -1,0 +1,19 @@
+{
+  "name": "tpavanzadaversionfinal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivandonatongua25/tpavanzadaversionfinal.git"
+  },
+  "author": " Ivan Donato Ngua Nzeng Osa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivandonatongua25/tpavanzadaversionfinal/issues"
+  },
+  "homepage": "https://github.com/ivandonatongua25/tpavanzadaversionfinal#readme"
+}
