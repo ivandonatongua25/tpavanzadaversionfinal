@@ -1,6 +1,5 @@
 const almacenes = []
 
-// id es socket.id y userId se refiere al id que tiene en Juntos
 require('mongoose');
 const almacen = require('../models/almacen');
 
@@ -86,7 +85,6 @@ const getAlmacenes = async () => {
 
 
 
-//const getUsers = (room) => users.filter(user => user.room === room)
 
 
 module.exports = { addAlmacen, getAlmacen, deleteAlmacen, getAlmacenes }

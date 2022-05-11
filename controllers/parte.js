@@ -1,6 +1,5 @@
 const Partes = []
 
-// id es socket.id y userId se refiere al id que tiene en Juntos
 require('mongoose');
 const parte = require('../models/parte');
 
@@ -86,7 +85,6 @@ const getPartes = async () => {
 
 
 
-//const getUsers = (room) => users.filter(user => user.room === room)
 
 
 module.exports = { addParte, getParte, deleteParte, getParte }

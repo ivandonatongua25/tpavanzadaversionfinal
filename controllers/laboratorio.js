@@ -1,6 +1,5 @@
 const laboratorios = []
 
-// id es socket.id y userId se refiere al id que tiene en Juntos
 require('mongoose');
 const laboratorio = require('../models/laboratorio');
 
@@ -86,7 +85,6 @@ const getLaboratorios = async () => {
 
 
 
-//const getUsers = (room) => users.filter(user => user.room === room)
 
 
 module.exports = { addLaboratorio, getLaboratorio, deleteLaboratorio, getLaboratorios }
