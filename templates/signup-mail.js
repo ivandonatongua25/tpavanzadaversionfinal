@@ -10,8 +10,8 @@ this.enviar_mail = (pnombre) => {
         }
     });
     let mail_options = {
-        from: 'Pabs',
-        to: 'pablo.monestel@gmail.com',
+        from: 'nguanzeng@gmail.com',
+        to: 'ivandonatongua@gmail.com',
         subject: 'Bienvenido a la aplicación',
         html: `
             <table border="0" cellpadding="0" cellspacing="0" width="600px" background-color="#2d3436" bgcolor="#2d3436">
