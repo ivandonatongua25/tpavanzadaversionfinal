@@ -45,7 +45,7 @@ const getParte = async (id) => {
 
     try{
 
-        let Parte = await deposito.findOne({ email: id });
+        let Parte = await deposito.findOne({  id });
 
          return Parte;
 
@@ -87,4 +87,4 @@ const getPartes = async () => {
 
 
 
-module.exports = { addParte, getParte, deleteParte, getParte }
+module.exports = { addParte, getParte, deleteParte, getPartes }
