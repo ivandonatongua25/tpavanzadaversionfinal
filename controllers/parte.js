@@ -3,11 +3,11 @@ const Partes = []
 require('mongoose');
 const parte = require('../models/parte');
 
-const addParte = async (nomnbre,tipo,stock,id) => {
+const addParte = async (codigo,descripcion,cantpartesConsum,cantpartesDesper) => {
     
     try{
 
-        let existingparte = await parte.findOne({ email: id });
+        let existingparte = await parte.findOne({ codigo: codigo });
 
         if(existingparte){
             console.log("existe la parte");
@@ -21,10 +21,10 @@ const addParte = async (nomnbre,tipo,stock,id) => {
             const Parte = new parte(
                     {
                         
-                        nomnbre: nomnbre,
-                        tipo:tipo,
-                        stock: stock,
-                        id : id
+                        codigo : codigo,
+                        descripcion:descripcion,
+                        cantpartesConsum: cantpartesConsum,
+                        cantpartesDesper: cantpartesDesper
                     }
                 );
 
@@ -41,11 +41,11 @@ const addParte = async (nomnbre,tipo,stock,id) => {
     }    
 }
 
-const getParte = async (id) => {
+const getParte = async (codigo) => {
 
     try{
 
-        let Parte = await deposito.findOne({  id });
+        let Parte = await deposito.findOne({  codigo });
 
          return Parte;
 
@@ -56,9 +56,9 @@ const getParte = async (id) => {
 
 }
 
-const deleteParte = async (id) => {
+const deleteParte = async (codigo) => {
     
-    await parte.deleteOne({ email: id }).then(function(){
+    await parte.deleteOne({ codigo: codigo }).then(function(){
     
         console.log("Parte deleted"); // Success
     

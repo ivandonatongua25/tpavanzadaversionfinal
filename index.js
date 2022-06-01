@@ -10,6 +10,7 @@ const { addAlmacen, getAlmacen, deleteAlmacen, getAlmacenes } = require("./contr
 const { addLaboratorio, getLaboratorio, deleteLaboratorio, getLaboratorios }= require("./controllers/laboratorio");
 const  { addParte, getParte, deleteParte, getPartes } = require("./controllers/parte");
 const { addDeposito, getDeposito, deleteDeposito, getDepositos } = require("./controllers/deposito");
+const { addProducto, getProducto, deleteProducto, getProductos } = require("./controllers/producto");
 
 const uri = process.env.MONGO_URI;
 
@@ -18,6 +19,7 @@ const parte = require("./models/parte");
 const laboratorio = require("./models/laboratorio");
 const almacen = require("./models/almacen");
 const deposito = require("./models/deposito");
+const producto = require("./models/producto");
 mongoose
   .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
@@ -33,22 +35,70 @@ app.get("/", (req, res) => {
   res.send("Server is up and running");
 });
 
+//*******add ********************/
 app.get("/users", async (req,res) =>{
 
-    users = await getUsers();
-    res.json({users:users});
+  Usr = await addUser();
+  res.json({user:Usr});
 
 });
 app.get("/laboratorio", async (req,res) =>{
 
-  laboratorios = await getLaboratorios();
-  res.json({laboratorios:laboratorios});
+  laboratorio = await addLaboratorio();
+  res.json({laboratorio:laboratorio});
 
 });
 app.get("/almacen", async (req,res) =>{
 
-  almacenes = await getAlmacenes();
-  res.json({almacenes:almacenes});
+  almacen = await addAlmacen();
+  res.json({almacenes:almacen});
+
+});
+
+
+app.get("/deposito", async (req,res) =>{
+
+  deposito = await addDeposito();
+  res.json({deposito:deposito});
+
+});
+app.get("/parte", async (req,res) =>{
+
+  parte = await addParte();
+  res.json({parte:parte});
+
+});
+
+app.get("/producto", async (req,res) =>{
+
+  producto = await addProducto();
+  res.json({producto:producto});
+
+});
+
+
+
+
+
+
+// ****************get todos****************************
+
+app.get("/users", async (req,res) =>{
+
+    Usr = await getUsers();
+    res.json({Usr:Usr});
+
+});
+app.get("/laboratorios", async (req,res) =>{
+
+  laboratorio = await getLaboratorios();
+  res.json({laboratorio:laboratorio});
+
+});
+app.get("/almacen", async (req,res) =>{
+
+  almacen = await getAlmacenes();
+  res.json({almacenes:almacen});
 
 });
 
@@ -65,7 +115,16 @@ app.get("/parte", async (req,res) =>{
 
 });
 
+app.get("/producto", async (req,res) =>{
 
+  producto = await addProducto();
+  res.json({producto:producto});
+
+});
+
+
+
+//****get con filtro *******/
 
 app.get("/users/:email", async (req,res) =>{
     const email = req.params.email;
@@ -83,9 +142,9 @@ app.get("/deposito/:email", async (req,res) =>{
   deposito = await getDeposito(email);
   res.json({deposito:deposito}); 
 });
-app.get("/parte/:id", async (req,res) =>{
-  const id = req.params.id;
-  almacen = await getAlmacen(id);
+app.get("/parte/:codigo", async (req,res) =>{
+  const codigo = req.params.codigo;
+  almacen = await getAlmacen(codigo);
   res.json({parte:parte}); 
 });
 app.get("/laboratorio/:email", async (req,res) =>{
@@ -95,11 +154,11 @@ app.get("/laboratorio/:email", async (req,res) =>{
 });
 
 
-
+//**********borrar *******************/
 app.delete("/users/:email",async (req,res) =>{
     const email = req.params.email;
-    user = await getUser(email);
-    res.json({user:user}); 
+    Usr = await getUser(email);
+    res.json({user:Usr}); 
 });
 
 app.delete("/almacen/:email", async (req,res) =>{
@@ -112,14 +171,14 @@ app.delete("/deposito/:email", async (req,res) =>{
   deposito = await getDeposito(email);
   res.json({deposito:deposito}); 
 });
-app.delete("/parte/:id", async (req,res) =>{
-  const id = req.params.id;
-  almacen = await getAlmacen(id);
+app.delete("/parte/:codigo", async (req,res) =>{
+  const codigo = req.params.codigo;
+  parte = await getParte(codigo);
   res.json({parte:parte}); 
 });
 app.delete("/laboratorio/:email", async (req,res) =>{
   const email = req.params.email;
-  laboratorio = await getAlmacen(email);
+  laboratorio = await getLaboratorio(email);
   res.json({laboratorio:laboratorio}); 
 });
 
