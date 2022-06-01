@@ -14,7 +14,7 @@ const addUser = async (name,surname,email) => {
             console.log("existe el usuario");
             console.log(existingUser);
 
-            return { user }
+            return { existingUser }
         
         }else{
 

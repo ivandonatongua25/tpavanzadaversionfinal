@@ -9,11 +9,11 @@ const addLaboratorio = async (nomnbre,ubicacion,email,telefono) => {
 
         let existinglaboratorio = await laboratorio.findOne({ email: email });
 
-        if(existingdeposito){
+        if(existinglaboratorio){
             console.log("existe el laboratorio");
-            console.log(existingdeposito);
+            console.log(existinglaboratorio);
 
-            return { existingdeposito }
+            return { existinglaboratorio }
         
         }else{
 

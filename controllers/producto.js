@@ -45,7 +45,7 @@ const getProducto = async (codigo) => {
 
     try{
 
-        let Producto = await almacen.findOne({ codigo: codigo });
+        let Producto = await producto.findOne({ codigo: codigo });
 
          return Producto;
 

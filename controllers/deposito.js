@@ -9,7 +9,7 @@ const addDeposito = async (nomnbre,ubicacion,email,telefono) => {
 
         let existingdeposito = await deposito.findOne({ email: email });
 
-        if(existindeposito){
+        if(existingdeposito){
             console.log("existe el deposito");
             console.log(existingdeposito);
 

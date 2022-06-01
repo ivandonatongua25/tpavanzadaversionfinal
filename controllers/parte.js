@@ -45,7 +45,7 @@ const getParte = async (codigo) => {
 
     try{
 
-        let Parte = await deposito.findOne({  codigo });
+        let Parte = await parte.findOne({  codigo });
 
          return Parte;
 
@@ -70,11 +70,11 @@ const deleteParte = async (codigo) => {
 }
 
 
-const getPartes = async () => {
+const getPartes = async (limite) => {
 
     try{
-        
-        let Partes = await deposito.find({})
+    
+        let Partes = await parte.find( {}).limit(limite)
         return Partes;
     
     }catch (error) {
