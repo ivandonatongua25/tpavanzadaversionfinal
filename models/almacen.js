@@ -12,11 +12,11 @@ const almacenSchema = new Schema({
 		required:true
     },
     email:{
-		type: String,
+		type: Number,
 		required:true
 	},
     telefono:{
-		type: int,
+		type: Number,
 		required:true
 	}
 })

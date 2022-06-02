@@ -12,11 +12,11 @@ const productoSchema = new Schema({
 		required:true
     },
     stock:{
-		type: String,
+		type: Number,
 		required:true
 	},
     codigo:{
-		type: int,
+		type: Number,
 		required:true
 	}
 })

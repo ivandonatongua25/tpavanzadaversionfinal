@@ -16,10 +16,10 @@ const laboratorioSchema = new Schema({
 		required:true
 	},
     telefono:{
-		type: int,
+		type: Number,
 		required:true
 	}
 })
 
-const laboratorio = mongoose.model('laboratorio',depositoSchema);
+const laboratorio = mongoose.model('laboratorio',laboratorioSchema);
 module.exports = laboratorio;

@@ -4,7 +4,7 @@ const parteSchema = new Schema({
 
 	
 	codigo:{
-		type: int,
+		type: Number,
 		required:true
 	},
 	descripcion:{
@@ -14,13 +14,13 @@ const parteSchema = new Schema({
 	},
 	
     cantpartesConsum:{
-		type: int,
+		type: Number,
 		required:true,
 	
 		},
 	
 	cantpartesDesper:{
-		type: int,
+		type: Number,
 		required:true,
 	
 		}

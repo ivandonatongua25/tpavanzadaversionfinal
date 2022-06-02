@@ -1,7 +1,7 @@
 const laboratorios = []
 
 require('mongoose');
-const laboratorio = require('../models/laboratorio');
+const laboratorio =require('../models/laboratorio');
 
 const addLaboratorio = async (nomnbre,ubicacion,email,telefono) => {
     

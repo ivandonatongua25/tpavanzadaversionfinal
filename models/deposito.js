@@ -16,7 +16,7 @@ const depositoSchema = new Schema({
 		required:true
 	},
     telefono:{
-		type: int,
+		type: Number,
 		required:true
 	}
 })
